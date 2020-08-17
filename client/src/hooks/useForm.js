@@ -21,10 +21,14 @@ const useForm = (initialValue, cb) => {
         console.log( "handleSubmit is working!")
     };
 
-    const clearForm = (e) => {
-        e.preventDefault();
-        setValue(initialValue);
-    };
+    // const clearForm = (e) => {
+    //     e.preventDefault();
+    //     setValue(initialValue);
+    // };
+
+  
+    
+
 
     // const ShowSuccessMessage = (e) =>{
     //     console.log("showSuccessMessage", e.target.name, e.target.value);
@@ -39,7 +43,7 @@ const useForm = (initialValue, cb) => {
 
     
 
-    return [value, handleSubmit, handleChanges, clearForm, showSuccessMessage, setShowSuccessMessage];
+    return [value, handleSubmit, handleChanges, showSuccessMessage, setShowSuccessMessage];
 
 }
 
