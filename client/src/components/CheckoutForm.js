@@ -40,6 +40,7 @@ const CheckoutForm = () => {
           First Name:
           <input
             name="firstName"
+            data-testid="firstName"
             value={value.firstName}
             onChange={handleChanges}
           />
@@ -79,7 +80,7 @@ const CheckoutForm = () => {
       {showSuccessMessage && (
         <div className="success-message" data-testid="successMessage">
           <p>
-            You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
+            You have ordered some plants! Woo-hoo! {/*<span role="img">🎉</span>*/}
           </p>
           <p>Your new green friends will be shipped to:</p>
           <br />
