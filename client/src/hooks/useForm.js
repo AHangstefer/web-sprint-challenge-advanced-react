@@ -4,7 +4,7 @@ import React, {useState} from "react";
 
 const useForm = (initialValue, cb) => {
     const [value, setValue] = useLocalStorage (false, initialValue);
-    //const [setShowSuccessMessage, setShowSuccessMessage]= useState(false);
+    const [showSuccessMessage, setShowSuccessMessage]= useState(false);
 
 
     const handleChanges = (e) =>{
@@ -17,7 +17,7 @@ const useForm = (initialValue, cb) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        //setShowSuccessMessage(true);
+        setShowSuccessMessage(true);
         console.log( "handleSubmit is working!")
     };
 
@@ -26,9 +26,20 @@ const useForm = (initialValue, cb) => {
         setValue(initialValue);
     };
 
+    // const ShowSuccessMessage = (e) =>{
+    //     console.log("showSuccessMessage", e.target.name, e.target.value);
+    //     setShowSuccessMessage({
+    //         ...showSuccessMessage,
+    //         [e.target.name]: e.target.value
+    //     });
+
+    // };
+
+
+
     
 
-    return [value, handleSubmit, handleChanges, clearForm];
+    return [value, handleSubmit, handleChanges, clearForm, showSuccessMessage, setShowSuccessMessage];
 
 }
 

@@ -16,9 +16,9 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  //const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   //const [values, setValues] = useState(initialValue);
-  const [value, setValue, handleChanges, handleSubmit, clearForm] =useForm(initialValue);
+  const [value, setValue, handleChanges, handleSubmit, clearForm, showSuccessMessage] =useForm(initialValue);
 
   // const handleChanges = (e) => {
   //   setValues({ ...values, [e.target.name]: e.target.value });
