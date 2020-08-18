@@ -19,6 +19,7 @@ const useForm = (initialValue, cb) => {
         e.preventDefault();
         setShowSuccessMessage(true);
         console.log( "handleSubmit is working!")
+        
     };
 
     // const clearForm = (e) => {
@@ -31,18 +32,16 @@ const useForm = (initialValue, cb) => {
 
 
     // const ShowSuccessMessage = (e) =>{
-    //     console.log("showSuccessMessage", e.target.name, e.target.value);
-    //     setShowSuccessMessage({
-    //         ...showSuccessMessage,
-    //         [e.target.name]: e.target.value
-    //     });
+    //     e.preventDefault();
+    //     setShowSuccessMessage(true);
+    //     
 
     // };
 
 
 
     
-
+   //      [value, setValue,   handleChanges,   handleSubmit]
     return [value, handleSubmit, handleChanges, showSuccessMessage, setShowSuccessMessage];
 
 }

@@ -12,10 +12,10 @@ test("form header renders", () => {
 test("form shows success message on submit with form details", () => {
     const mockOnSubmit = jest.fn()
     const {getByLabelText, getByTestId, getByText} = render(<CheckoutForm onSubmit={mockOnSubmit}/>)
-
+    
     const form= getByTestId(/form/i);
     const firstName = getByTestId(/firstName/i);
-    const submit = getByTestId(/successMessage/i);
+    //const submit = getByTestId(/successMessage/i);
 
     fireEvent.change(firstName, {target:{value:"Anna"}});
     fireEvent.click(getByTestId(/button/i));
