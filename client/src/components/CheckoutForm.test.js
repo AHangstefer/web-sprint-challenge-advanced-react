@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, getByText } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -11,16 +11,21 @@ test("form header renders", () => {
 
 test("form shows success message on submit with form details", () => {
     const mockOnSubmit = jest.fn()
-    const {getByText, getByTestId} = render(<CheckoutForm onSubmit={mockOnSubmit}/>)
+    const {getByLabelText, getByTestId, getByText} = render(<CheckoutForm onSubmit={mockOnSubmit}/>)
 
-    const form= getByText(/Checkout Form/i)
+    const form= getByTestId(/form/i);
     const firstName = getByTestId(/firstName/i);
     const submit = getByTestId(/successMessage/i);
 
     fireEvent.change(firstName, {target:{value:"Anna"}});
-    fireEvent.onBlur(firstName);
+    fireEvent.click(getByTestId(/button/i));
+    //fireEvent.onBlur(firstName);
 
-    expect(form.innerHTML).toMatch(You have ordered some plants! Woo-hoo!
-     Your new green friends will be shipped to: Anna);
+    expect(form.outerHTML).toContain("Anna");
+    
+    getByText("Anna");
+    getByText("You have ordered some plants! Woo-hoo!");
+    getByText("Your new green friends will be shipped to:");
+
     
 });

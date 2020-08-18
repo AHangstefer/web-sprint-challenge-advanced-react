@@ -34,7 +34,7 @@ const CheckoutForm = () => {
 
   return (
     <>
-      <form onSubmit = {handleSubmit}>
+      <form onSubmit = {handleSubmit} data-testid="form">
         <h2>Checkout Form</h2>
         <label>
           First Name:
@@ -73,7 +73,7 @@ const CheckoutForm = () => {
           Zip:
           <input name="zip" value={value.zip} onChange={handleChanges} />
         </label>
-        <button>Checkout</button>
+        <button data-testid="button">Checkout</button>
        
       </form>
 
